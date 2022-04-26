@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "./node_modules/gts/",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "object-curly-spacing": ["warn", "always"]
+  }
+}

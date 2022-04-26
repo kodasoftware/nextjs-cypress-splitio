@@ -1,0 +1,25 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+metadata:
+  name: __PROJECT__
+build:
+  artifacts:
+    - image: __PROJECT__
+      context: .
+      sync:
+        manual:
+          - src: app/dist/**/*
+            dest: /opt/app
+            strip: app/dist/
+      platforms:
+        - linux/amd64
+      docker:
+        dockerfile: Dockerfile
+        buildArgs:
+          NPM_TOKEN: "{{ .NPM_TOKEN }}"
+  local:
+    push: false
+deploy:
+  kustomize:
+    paths:
+      - ./deploy/base

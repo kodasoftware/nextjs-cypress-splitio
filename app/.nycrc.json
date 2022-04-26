@@ -1,0 +1,7 @@
+{
+  "all": false,
+  "check-coverage": true,
+  "exclude": [".prettierrc.js", "test/**/*"],
+  "extends": "@istanbuljs/nyc-config-typescript",
+  "reporter": ["text", "html"]
+}
